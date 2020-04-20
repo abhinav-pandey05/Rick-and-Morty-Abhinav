@@ -20,7 +20,6 @@ class SortDropdown extends Component {
     }
 
     render() {
-        // console.log("Sort dropdown Area >>", this.props);
         return(
             <div className = "sort-dropdown">                    
                 <select className="dropdown-content"

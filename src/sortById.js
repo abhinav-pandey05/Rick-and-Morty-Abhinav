@@ -1,19 +1,20 @@
 import {sortData, fetchCharactersSuccess} from './actions';
 
-function sortById(sortBy, characterSet) {
+function sortById(sortBy, characters) {
     return (dispatch, getState) => {
+        console.log(getState());
         var sortedArray = [];
-            console.log("sortBy and charactersa are >>", getState());
             if(sortBy === "Descending"){
-                sortedArray = characterSet.sort((a,b)=> {
+                sortedArray = characters.sort((a,b)=> {
                     return(b.id - a.id)
                 });
             }
             else {
-                sortedArray =  characterSet.sort((a,b)=> {
+                sortedArray =  characters.sort((a,b)=> {
                     return(a.id - b.id)
                 });
             }
+            // console.log("sortedArray is", sortedArray);
             dispatch(fetchCharactersSuccess(sortedArray));
         }
 }

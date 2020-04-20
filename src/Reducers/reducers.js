@@ -5,7 +5,7 @@ const initialState = {
     pending: false,
     error: null,
     allCharacters: [],
-    sortedData: []
+    // sortedData: []
 }
 
 export default function charactersReducer(state = initialState, action) {
@@ -48,7 +48,7 @@ export default function charactersReducer(state = initialState, action) {
     }
 }
 export const getCharacters = state => {
-    console.log("get characters value",state.charactersReducer.characters)
+    console.log("get characters value",state.charactersReducer.characters);
     return  state.charactersReducer.characters
 };
 export const getCharactersPending = state => state.pending;

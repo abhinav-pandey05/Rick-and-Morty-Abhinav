@@ -19,10 +19,6 @@ class Filters extends Component {
                         <input type = "checkbox" value = "Alien" onClick={(e) => this.props.fetchFilters(e)}></input>
                         <label>Alien</label>
                     </div>
-                    {/* <div className = "otherSpecies item">
-                        <input type = "checkbox"></input>
-                        <label>Other Species</label>
-                    </div> */}
                 </div>
                 <div className = "gender filterType">
                     <h3 className = "heading">Gender</h3>
@@ -49,10 +45,6 @@ class Filters extends Component {
                         <input type = "checkbox" value = "Earth (C-137)" onClick={(e) => this.props.fetchFilters(e)}></input>
                         <label>Earth (C-137)</label>
                     </div>
-                    {/* <div className = "otherOrigins item">
-                        <input type = "checkbox"></input>
-                        <label>otherOrigins</label>
-                    </div> */}
                 </div>
             </section>
         )

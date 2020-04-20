@@ -21,7 +21,6 @@ export function fetchCharactersPending() {
 }
 
 export function fetchCharactersSuccess(characters) {
-    console.log("caharacter are >", characters);
     return {
         type: FETCH_CHARACTERS_SUCCESS,
         characters: characters
