@@ -1,13 +1,222 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  body {
+    margin: auto;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .heading {
+    font-family: 'Merriweather Sans', sans-serif;
+  }
+  .filters {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .filterType {
+    border: 1px solid grey;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 0.6rem;
+    padding:5px 10px;
+  }
+  .content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    border-bottom: 1px rgb(100, 115, 86) solid;
+    line-height: 1.2rem;
+    padding: 5px 0;
+  }
+  .content-row:last-of-type {
+    border: none;
+  }
+  .card .prop-name {
+    color: rgb(100, 115, 86);
+    text-align: left;
+  }
+  .card .prop-value {
+    color: rgb(140, 85, 20);
+    text-align: right;
+  }
+  .card-title h3 {
+    font-size: 0.9rem;
+    margin: 0;
+    z-index: 2;
+    padding-top: 10px;
+  }
+  .card-title h3,p {
+    padding-left: 5px;
+    
+  }
+  .title-details {
+    font-size: 0.6rem;
+  }
+  .sort-dropdown {
+    display: block;
+  }
+
+  .sort-dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .sort-dropdown:hover .dropdown-button {
+    background-color: #3e8e41;
+  }
+  .dropdown-content {
+    /* position: absolute; */
+    background-color: #f1f1f1;
+    width: 20%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  .dropdown-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    display: block;
+    width: 20%;
+  }
+@media only screen and (min-width: 650px) {
+  body {
+    max-width: 100%;
+    padding: 4rem;
+  }
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 30px;
+    background: floralwhite;
+  }
+  .filters {
+    min-width: 20%;
+    flex-direction: column;
+    margin-right: 50px;
+  }
+  .filterType {
+    border: 1px solid grey;
+    min-width: 140px;
+    margin-bottom: 20px;
+    padding: 0 10px 10px 10px;
+  }
+  .actionArea {
+    flex-grow: 4;
+    border: 1px solid green;
+  }
+  .characters-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: rgb(30, 35, 42);
+    padding-top: 10px;
+  }
+  .card {
+    flex: 0 1 calc(25% - 3em);
+    /* box-shadow:5px rgba(0,0,0,0.03); */
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background-color: rgb(51, 51, 51);
+    color: whitesmoke;
+  }
+  .card-header {
+    position: relative;
+    min-width: 200px;
+  }
+  .card-title {
+    background: rgba(51, 51, 51, .7);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+  }
+  .card-photo {
+    padding-top: 5px;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 15px 15px 0 0;
+    display: block; 
+  }
+}
+@media only screen and (max-width: 649px) {
+  body {
+    padding: 1rem;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: floralwhite;
+  }
+  .filters {
+    width: 100%;
+    flex-direction: column;
+  }
+  .filterType {
+    border: 1px solid grey;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 0 0 10px 0;
+  }
+  .item , .heading {
+    margin-left: 10px;
+  }
+  .characters-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* background-color: rgb(30, 35, 42); */
+    padding-top: 10px;
+  }
+  .card {
+    flex: 0 1 calc(25% - 2em);
+    width: 11rem;
+    /* box-shadow:5px rgba(0,0,0,0.03); */
+    margin-bottom: 30px;
+    /* border-radius: 15px; */
+    background-color: rgb(51, 51, 51);
+    color: whitesmoke;
+  }
+  .card-header {
+    position: relative;
+    min-width: 200px;
+  }
+  .card-title {
+    background: rgba(51, 51, 51, .7);
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 11rem;
+  }
+  .card-photo {
+    padding-top: 5px;
+    width: 11rem;
+    object-fit: contain;
+    /* border-radius: 15px 15px 0 0; */
+    display: block; 
+  }
+  .dropdown-content {
+    width: 100%;
+  }
 }
