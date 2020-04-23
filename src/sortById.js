@@ -1,21 +1,23 @@
-import {sortData, fetchCharactersSuccess} from './actions';
+import {getSortingType, fetchCharactersSuccess, showAllCharacters}  from './actions';
 
 function sortById(sortBy, characters) {
     return (dispatch, getState) => {
-        console.log(getState());
         var sortedArray = [];
+        dispatch(getSortingType(sortBy));
             if(sortBy === "Descending"){
-                sortedArray = characters.sort((a,b)=> {
+                sortedArray = characters.slice().sort((a,b)=> {
                     return(b.id - a.id)
                 });
             }
             else {
-                sortedArray =  characters.sort((a,b)=> {
+                sortedArray =  characters.slice().sort((a,b)=> {
                     return(a.id - b.id)
                 });
             }
-            // console.log("sortedArray is", sortedArray);
             dispatch(fetchCharactersSuccess(sortedArray));
+            dispatch(showAllCharacters(sortedArray));
+
+            return sortBy;
         }
 }
 

@@ -3,8 +3,7 @@ import React, {Component} from 'react';
 class Character extends Component {
 
     render() {
-        // console.log(this.props);
-        const {id, name, status, species, gender, image, created, origin, location} = this.props;
+        const {id, name, status, species, gender, image, origin, location} = this.props;
         return(
             <div className = "card">
                  <div className = "card-header">

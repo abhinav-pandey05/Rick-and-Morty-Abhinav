@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Character from './Character';
-class CharactersGrid extends Component {
 
-    render() {
-        if(this.props.characters) {
+const CharactersGrid = props => {
+
+        if(props.characters) {
             return(
                 <section className = "characters-grid">
-                    {this.props.characters.map((character, i) => <Character {...this.props.characters[i]} key = {i} i = {i} character = {character}/>)}
+                    {props.characters.map((character, i) => <Character {...props.characters[i]} key = {i} i = {i} character = {character}/>)}
                 </section>
             )
         }
@@ -14,7 +14,6 @@ class CharactersGrid extends Component {
         return(
             <p>still loading</p>
         )
-    }
 }
 
 export default CharactersGrid;

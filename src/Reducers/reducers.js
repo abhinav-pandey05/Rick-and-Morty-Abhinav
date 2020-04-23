@@ -1,11 +1,11 @@
-import {FETCH_CHARACTERS_PENDING, FETCH_CHARACTERS_SUCCESS, FETCH_CHARACTERS_ERROR, SHOW_FILTERED_CHARACTERS, SHOW_ALL_CHARACTERS, SORT_CHARACTERS} from '../actions';
+import {FETCH_CHARACTERS_PENDING, FETCH_CHARACTERS_SUCCESS, FETCH_CHARACTERS_ERROR, SHOW_FILTERED_CHARACTERS, SHOW_ALL_CHARACTERS, GET_SORTING_TYPE} from '../actions';
 
 const initialState = {
     characters: [],
     pending: false,
     error: null,
     allCharacters: [],
-    // sortedData: []
+    sortingType: null
 }
 
 export default function charactersReducer(state = initialState, action) {
@@ -16,7 +16,6 @@ export default function charactersReducer(state = initialState, action) {
             pending: true
         }
         case FETCH_CHARACTERS_SUCCESS:
-            console.log("my state is ..", action.characters);
             return {
                 ...state,
                 characters: action.characters
@@ -37,19 +36,18 @@ export default function charactersReducer(state = initialState, action) {
                     ...state,
                     allCharacters: action.allCharacters
                 }
-            // case SORT_CHARACTERS:
-            //     console.log("action.allcharacers", action.characters);
-            //     return {
-            //         ...state,
-            //         characters: action.characters
-            //     }
+            case GET_SORTING_TYPE:
+                return {
+                    ...state,
+                    sortingType: action.sortingType
+                }
             default: 
             return state;
     }
 }
 export const getCharacters = state => {
-    console.log("get characters value",state.charactersReducer.characters);
     return  state.charactersReducer.characters
 };
 export const getCharactersPending = state => state.pending;
 export const getCharactersError = state => state.error;
+export const getSortingType = state => state.sortingType;

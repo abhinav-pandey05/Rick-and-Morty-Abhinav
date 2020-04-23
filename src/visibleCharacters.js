@@ -14,7 +14,7 @@ function visibleCharacters(characters, appliedFilters) {
         console.log(characters);
         var filteredCharacters1 = [];
         characters.allCharacters.forEach(r => {
-            if (appliedFilters.genderFilter.indexOf(r.origin.name) !== -1) {
+            if (appliedFilters.originFilter.indexOf(r.origin.name) !== -1) {
                 filteredCharacters1.push(r);
                 console.log(filteredCharacters1);
             }

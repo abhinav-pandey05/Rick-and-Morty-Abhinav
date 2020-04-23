@@ -12,7 +12,7 @@ export const REMOVE_SPECIES_FILTER = 'REMOVE_SPECIES_FILTER';
 export const REMOVE_ORIGIN_FILTER = 'REMOVE_ORIGIN_FILTER';
 export const SHOW_FILTERED_CHARACTERS = 'SHOW_FILTERED_CHARACTERS';
 export const SHOW_ALL_CHARACTERS = 'SHOW_ALL_CHARACTERS';
-export const SORT_CHARACTERS = 'SORT_CHARACTERS';
+export const GET_SORTING_TYPE = 'GET_SORTING_TYPE';
 
 export function fetchCharactersPending() {
     return {
@@ -35,7 +35,6 @@ export function fetchCharactersError(error) {
 }
 
 export function addGenderFilter(gender) { 
-    // console.log("called > ",gender );
     return {
         type: ADD_GENDER_FILTER,
         gender: gender
@@ -82,15 +81,12 @@ export function showFilteredData(totalCharacters,appliedFilters){
 export function showAllCharacters(allCharacters){
     return {
         type: SHOW_ALL_CHARACTERS,
-        allCharacters: allCharacters,
-        
+        allCharacters: allCharacters, 
     }
 };
-// export function sortData(sortType, characters){
-//     console.log(characters);
-//     return {
-//         type: SORT_CHARACTERS,
-//         characters: characters,
-        
-//     }
-// };
+export function getSortingType(sortingType){
+    return {
+        type: GET_SORTING_TYPE,
+        sortingType: sortingType,  
+    }
+};
